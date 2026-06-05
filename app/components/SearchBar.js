@@ -1,6 +1,6 @@
 import styles from "./SearchBar.module.css";
 
-export default function SearchBar() {
+export default function SearchBar({ value, field, onChange, onFieldChange, onClear }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.inputGroup}>
@@ -21,9 +21,32 @@ export default function SearchBar() {
         </svg>
         <input
           type="text"
-          placeholder="Search characters..."
+          placeholder={`Search ${field}...`}
           className={styles.input}
+          value={value}
+          onChange={onChange}
+          aria-label={`Search by ${field}`}
         />
+        <select
+          className={styles.fieldSelect}
+          value={field}
+          onChange={onFieldChange}
+          aria-label="Choose search field"
+        >
+          <option value="name">Name</option>
+          <option value="species">Species</option>
+          <option value="status">Status</option>
+        </select>
+        {value && (
+          <button
+            type="button"
+            className={styles.clearButton}
+            onClick={onClear}
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        )}
       </div>
     </div>
   );

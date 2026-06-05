@@ -38,3 +38,39 @@
 .input::placeholder {
   color: var(--text-secondary);
 }
+
+.fieldSelect {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  min-width: 9rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.fieldSelect:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.clearButton {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.clearButton:hover,
+.clearButton:focus-visible {
+  background-color: rgba(100, 116, 139, 0.15);
+  color: var(--text-primary);
+}

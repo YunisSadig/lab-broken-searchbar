@@ -3,3 +3,10 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.25rem;
 }
+
+.message {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
